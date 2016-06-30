@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Hind:500);
+
+body{
+    
+    text-align:center;
+    font-family: 'Hind', sans-serif;
+    margin:0;
+}
+
+nav ul{
+    display:inline-block;
+    box-sizing:border-box;
+    background:#fff;
+    padding:0;
+    margin:0;
+    list-style:none;
+    overflow:hidden
+}
+nav li{
+    display:block;
+    float:left
+}
+nav a{
+    padding:20px 25px;
+    text-transform:uppercase;
+    font-size:16px;
+    display:block;
+    box-sizing:border-box;
+    background:#fff;
+    color:#333;
+    text-decoration:none;
+    transition:all 0.2s;
+}
+nav a:hover, nav a:focus{
+    color:#fff;
+    text-decoration:none;
+    background: #0c8;
+    
+}
+nav>a{
+    position:absolute;
+    top:0px;
+    color:#444;
+    text-decoration:none;
+    display:none;
+    z-index:10
+}
+#logo{
+    width: 70px;
+}
+
+@media screen and (max-width: 767px) {
+    
+    nav>a{
+        display:block
+    }
+    nav ul{
+        right:0px;
+        padding:0;
+        display:block;
+        visibility:hidden;
+        pointer-events:none;
+        opacity:0;
+        transition:all 0.2s
+    }
+    nav li{
+        float:none;
+        margin-top:-51px;
+        transition:all 0.2s;
+    }
+    nav a{
+        background:#fff;
+        width:100%;
+        border:0;
+        right:0;
+        padding:20px 0px
+    }
+    .nava{
+        visibility:visible;
+        margin-top:0;
+        opacity:1;
+        pointer-events:all
+    }
+    .nava li{
+        margin:0
+    }
+}
