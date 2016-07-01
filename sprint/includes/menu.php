@@ -3,6 +3,7 @@
     <ul>
         <li><a href="index.php"><img id="logo" src="img/logo.png"></a></li>
         <li><a href="patient.php">PATIENT</a></li>
+        <li><a href="rechercherPatient.php">RECHERCHER PATIENT</a></li>
         <li><a href="index.php">GESTION</a></li>
     </ul>
 </nav>
