@@ -32,6 +32,7 @@
         $nom = htmlspecialchars($_POST['nom']);
         $type = htmlspecialchars($_POST['type']);
         $question = htmlspecialchars($_POST['question']);
+        echo $type;
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
         echo '<h1>Votre nouveau Formulaire a été mis à jour</h1>';
