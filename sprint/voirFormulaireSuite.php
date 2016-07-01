@@ -27,8 +27,6 @@
 <?php
     //si l utilisateur est deja connecte
     if (isset($_SESSION['login'])) {
-        $page = "voirFormulaireSuite.php";
-        $bouton = "voir";
         require 'includes/menuConnexion.php';
         require 'includes/connect.php';
             echo '<section id="bandeau">';
