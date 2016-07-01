@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-            <title>rediger les questions</title>
+            <title>suite suppression</title>
             <link rel="stylesheet" href="css/style.css" />
             <link rel="stylesheet" href="css/menu.css" />
             <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
@@ -26,41 +26,23 @@
 
     <body>
 <?php
-    
     //si l utilisateur est deja connecte
     if (isset($_SESSION['login'])) {
-        $i = htmlspecialchars($_POST['nbQuestions']);
-        $nom = htmlspecialchars($_POST['nom']);
-        $type = htmlspecialchars($_POST['zob']);
-        $compteur = 0;
-        require 'includes/connect.php';
         require 'includes/menuConnexion.php';
-        echo '<h1>Proposer Les Questions</h1>';
-        echo '</br>';
-        echo '<section id="form">';
-            echo '<form action="creerQuestionFin.php" method="post">';
-                while ($compteur < $i){
-                    echo '<div id="formulaire">';
-                    $ordre = $compteur+1;
-                    echo $ordre;
-                    echo ': ';
-                        echo '<input type="text" class="form-control" placeholder="question" id="question" name="question" required>';
-                        echo'</br>';
-                    echo '</div>';
-                    $compteur = $compteur+1;
-                }
-?>
-                <input type="hidden" name="nom" value=<?php echo $nom; ?>>
-                <input type="hidden" name="type" value=<?php echo $type; ?>>
-<?php
-                echo '<button type="submit" id="envoyerConnexion" class="btn btn-default">Creer</button>';
-            echo '</form>';
-    echo '</section>';
+        require 'includes/connect.php';
+        echo '<section id="bandeau">';
+                $post = $_POST['categorie'];
+                echo '<h1>Le Formulaire ';
+                echo $post;
+                echo ' a été supprimé</h1>';
+                        $requete = 'DELETE FROM question WHERE nomFormulaire = "'.$post.'"';
+                        $bdd->query($requete) or die ('Erreur '.$requete.' '.$bdd->error());
+                        $bdd->close();
+        echo '</section>';
     }
     else{
-        echo 'il y a eu un probleme';
+        echo 'il y a eu un probleme, rendez-vous ici';
     }
-    ?>
+?>
     </body>
 </html>
-

@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-            <title>voir un formulaire</title>
+            <title>suite voir un formulaire</title>
             <link rel="stylesheet" href="css/style.css" />
             <link rel="stylesheet" href="css/menu.css" />
             <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
@@ -32,11 +32,27 @@
         require 'includes/menuConnexion.php';
         require 'includes/connect.php';
             echo '<section id="bandeau">';
-                echo '<h1>Examiner un formulaire</h1>';
-                    require 'includes/bandeauChoix.php';
+                $nomFormulaire = $_POST['categorie'];
+                echo '<h1>Examiner le formulaire ';
+                echo $nomFormulaire;
+                echo '</h1>';
+        $i=1;
+        $request = $bdd->query('SELECT * FROM question WHERE nomFormulaire = "'.$nomFormulaire.'" GROUP BY nomFormulaire ORDER BY id DESC');
+        while ($donnees = $request->fetch(PDO::FETCH_ASSOC))
+        {
+            echo $donnees['nomFormulaire'];
+            echo '--';
+            echo $donnees['type'];
+            echo '--';
+            echo $i;
+            echo ': ';
+            echo $donnees['question'];
+            echo '</br>';
+            $i++;
+        }
+        $request->closeCursor();
             echo '</section>';
     }
 ?>
     </body>
 </html>
-

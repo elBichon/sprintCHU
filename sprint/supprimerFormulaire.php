@@ -28,19 +28,17 @@
 <?php
     //si l utilisateur est deja connecte
     if (isset($_SESSION['login'])) {
-        $page = "supprimerFormulaire.php";
+        $page = "supprimerFormulaireSuite.php";
         $bouton = "supprimer";
         require 'includes/menuConnexion.php';
         require 'includes/connect.php';
         echo '<section id="bandeau">';
                 echo '<h1>Supprimer un formulaire</h1>';
                     require 'includes/bandeauChoix.php';
-        $post = $_POST['nomFormulaire'];
-        $requete = 'DELETE * FROM question WHERE nomFormulaire = "'.$post.'"';
-        $bdd->query($requete) or die ('Erreur '.$requete.' '.$bdd->error());
-        $bdd->close();
         echo '</section>';
-
+    }
+    else{
+        echo 'il y a eu un probleme, rendez-vous ici';
     }
 ?>
     </body>

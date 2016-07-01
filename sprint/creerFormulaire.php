@@ -40,7 +40,7 @@
                 echo '</div>';
                 echo '<div class="error-message"></div></br>';
                 echo '<div id="nbQuestions">';
-                    echo '<label for="NBqUESTIONS">Nombre De Questions: </label>';
+                    echo '<label for="nbQuestions">Nombre De Questions: </label>';
                     echo '<input type="text" class="form-control" placeholder="nbQuestions" id="nbQuestions" name="nbQuestions" required>';
                 echo '</div>';
                 echo '<div class="error-message"></div></br>';

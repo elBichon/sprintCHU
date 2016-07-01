@@ -3,9 +3,9 @@
     class Questions
     {
         private $_id,
-        $_nom,
+        $_nomFormulaire,
         $_type,
-        $_texte
+        $_question;
         
         //construction
         public function __construct(array $donnees)
@@ -32,17 +32,17 @@
         {
             return $this->_id;
         }
-        public function nom()
+        public function nomFormulaire()
         {
-            return $this->_nom;
+            return $this->_nomFormulaire;
         }
         public function type()
         {
             return $this->_type;
         }
-        public function texte()
+        public function question()
         {
-            return $this->_texte;
+            return $this->_question;
         }
         
         
@@ -56,11 +56,11 @@
                 $this->_id = $id;
             }
         }
-        public function setNom($nom)
+        public function setNomFormulaire($nom)
         {
-            if (is_string($nom)
+            if (is_string($nomFormulaire)
             {
-                $this->_nom = $nom;
+                $this->_nomFormulaire = $nomFormulaire;
             }
         }
         public function setType($type)
@@ -71,12 +71,12 @@
             $this->_type = $type;
             }
         }
-        public function setTexte($texte)
+        public function setQuestion($question)
         {
-            if (is_string($texte)
+            if (is_string($question)
             {
-            $this->_texte = $texte;
+            $this->_question = $question;
             }
         }
 }
-?>
+
