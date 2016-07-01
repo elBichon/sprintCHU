@@ -31,7 +31,7 @@
     if (isset($_SESSION['login'])) {
         $i = htmlspecialchars($_POST['nbQuestions']);
         $nom = htmlspecialchars($_POST['nom']);
-        $type = htmlspecialchars($_POST['zob']);
+        $type = htmlspecialchars($_POST['type']);
         $compteur = 0;
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
@@ -49,10 +49,9 @@
                     echo '</div>';
                     $compteur = $compteur+1;
                 }
-?>
-                <input type="hidden" name="nom" value=<?php echo $nom; ?>>
-                <input type="hidden" name="type" value=<?php echo $type; ?>>
-<?php
+
+                echo '<input type="hidden" name="nom" value= "'.$nom.'">';
+                echo '<input type="hidden" name="type" value="'.$type.'">';
                 echo '<button type="submit" id="envoyerConnexion" class="btn btn-default">Creer</button>';
             echo '</form>';
     echo '</section>';
