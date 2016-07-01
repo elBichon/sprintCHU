@@ -33,6 +33,7 @@
         require 'includes/connect.php';
             echo '<section id="bandeau">';
                 $nomFormulaire = $_POST['categorie'];
+                echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>--><a href="voirFormulaire.php">examiner</a>-->affichage</p>';
                 echo '<h1>Examiner le formulaire ';
                 echo $nomFormulaire;
                 echo '</h1>';
@@ -55,4 +56,6 @@
     }
 ?>
     </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </html>

@@ -32,11 +32,14 @@
         require 'includes/menuConnexion.php';
         require 'includes/connect.php';
             echo '<section id="bandeau">';
+                echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>-->examiner</p>';
                 echo '<h1>Examiner un formulaire</h1>';
                     require 'includes/bandeauChoix.php';
             echo '</section>';
     }
 ?>
     </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </html>
 

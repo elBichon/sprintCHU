@@ -30,6 +30,7 @@
     //si l utilisateur est deja connecte
     if (isset($_SESSION['login'])) {
         require 'includes/menuConnexion.php';
+        echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>-->creer</p>';
         echo '<h1>Creer un formulaire</h1>';
         echo '</br>';
         echo '<section id="form">';
@@ -67,5 +68,7 @@
     }
     ?>
     </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </html>
 

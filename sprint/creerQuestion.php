@@ -35,6 +35,7 @@
         $compteur = 0;
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
+        echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>--><a href="creerFormulaire.php">creer</a>-->rediger</p>';
         echo '<h1>Proposer Les Questions</h1>';
         echo '</br>';
         echo '<section id="form">';
@@ -61,5 +62,7 @@
     }
     ?>
     </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </html>
 

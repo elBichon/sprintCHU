@@ -34,6 +34,7 @@
         $question = htmlspecialchars($_POST['question']);
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
+        echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>--><a href="creerFormulaire.php">creer</a>--><a href="creerFormulaire.php">rediger</a>-->envoyer</p>';
         echo '<h1>Votre nouveau Formulaire a été mis à jour</h1>';
             echo '<section>';
                 $req = $bdd->prepare('INSERT INTO question (nomFormulaire, type, question) VALUES(?,?,?)');
@@ -45,5 +46,7 @@
     }
     ?>
     </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </html>
 

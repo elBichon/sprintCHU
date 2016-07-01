@@ -67,6 +67,7 @@
             $id = $_SESSION['id'];
             $_SESSION['login'] = $login;
             require 'includes/menuConnexion.php';
+            echo '<p><a href="index.php">Accueil</a>-->connexion</p>';
             echo 'Bonjour ' . $_SESSION['login'];
             require 'includes/navigation.php';
             
@@ -84,6 +85,8 @@
         </footer>
 
     </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </html>
 
 
