@@ -1,3 +1,5 @@
+--table contenant les questions
+
 drop table if exists question;
 
 create table question (
