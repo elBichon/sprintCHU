@@ -1,4 +1,4 @@
-//creation de la base de donnees de patients
+--creation de la base de donnees de patients
 create database if not exists sprint character set utf8 collate utf8_unicode_ci;
 use sprint;
 
