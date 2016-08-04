@@ -1,3 +1,4 @@
+--table contenant le login et le mdp de l admin
 drop table if exists connexion;
 
 create table connexion (
