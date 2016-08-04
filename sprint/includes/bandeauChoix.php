@@ -1,4 +1,5 @@
 <?php
+//choix du type de formulaire a creer
 echo '<div id="recherche">';
     echo '<form method="post" action="'.$page.'">';
         echo '<select name="categorie" id="categorie">';
