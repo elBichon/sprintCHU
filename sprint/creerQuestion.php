@@ -41,6 +41,7 @@
         echo '<section id="form">';
             echo '<form action="creerQuestionFin.php" method="post">';
                 while ($compteur < $i){
+                    //ajouter une variable $qId qui est la concaténation du nom et d'un numéro, il servira de repère lors de l'insertion multiple
                     echo '<div id="formulaire">';
                     $ordre = $compteur+1;
                     echo $ordre;
@@ -49,10 +50,13 @@
                         echo'</br>';
                     echo '</div>';
                     $compteur = $compteur+1;
+                    
                 }
 
                 echo '<input type="hidden" name="nom" value= "'.$nom.'">';
                 echo '<input type="hidden" name="type" value="'.$type.'">';
+                echo '<input type="hidden" name="qId" value="'.$qId.'">';
+                
                 echo '<button type="submit" id="envoyerConnexion" class="btn btn-default">Creer</button>';
             echo '</form>';
     echo '</section>';
