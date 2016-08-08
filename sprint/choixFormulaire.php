@@ -86,9 +86,9 @@
         echo "il y a eu un problème. Rendez-vous <a href='index.php'>ici</a> pour réessayer s'il vous plaît";
     }
     
-    else{
+    else{//rajouter une boucle pour faire la sélection sur les qId et envoyer plusieurs choses via formulaire
         echo '<form method="post" action="questions.php">';
-        $reponse = $bdd->query("SELECT DISTINCT nomFormulaire FROM question ORDER BY id");
+        $reponse = $bdd->query("SELECT DISTINCT * FROM question ORDER BY id");
         echo '<div id="choixForm">';
         echo '<label for="form">Choisissez les formulaires</label>';
         echo '</br>';
