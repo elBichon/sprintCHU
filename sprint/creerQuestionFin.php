@@ -32,13 +32,19 @@
         $nom = htmlspecialchars($_POST['nom']);
         $type = htmlspecialchars($_POST['type']);
         $question = htmlspecialchars($_POST['question']);
+        $qId = htmlspecialchars($_POST['qId']);
+        
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
         echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>--><a href="creerFormulaire.php">creer</a>--><a href="creerFormulaire.php">rediger</a>-->envoyer</p>';
         echo '<h1>Votre nouveau Formulaire a été mis à jour</h1>';
             echo '<section>';
-                $req = $bdd->prepare('INSERT INTO question (nomFormulaire, type, question) VALUES(?,?,?)');
-                $req->execute(array($_POST['nom'], $_POST['type'],$_POST['question']));
+             while ($compteur < $qId){
+                    //ajouter une variable $qId qui est la concaténation du nom et d'un numéro, il servira de repère lors de l'insertion multiple
+                $req = $bdd->prepare('INSERT INTO question (nomFormulaire, type, question, qId) VALUES(?,?,?,?)');
+                $req->execute(array($_POST['nom'], $_POST['type'], $_POST['question'], $_POST['qId']));
+                 $compteur = $compteur+1;
+                }
             echo '</section>';
     }
     else{
