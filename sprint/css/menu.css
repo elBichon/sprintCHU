@@ -7,81 +7,93 @@ body{
     margin:0;
 }
 
-nav ul{
-    display:inline-block;
-    box-sizing:border-box;
-    background:#fff;
-    padding:0;
-    margin:0;
-    list-style:none;
-    overflow:hidden
-}
-nav li{
-    display:block;
-    float:left
-}
-nav a{
-    padding:20px 25px;
-    text-transform:uppercase;
-    font-size:16px;
-    display:block;
-    box-sizing:border-box;
-    background:#fff;
-    color:#333;
-    text-decoration:none;
-    transition:all 0.2s;
-}
-nav a:hover, nav a:focus{
-    color:#fff;
-    text-decoration:none;
-    background: #0c8;
-    
-}
-nav>a{
-    position:absolute;
-    top:0px;
-    color:#444;
-    text-decoration:none;
-    display:none;
-    z-index:10
-}
-#logo{
-    width: 70px;
-}
+$red: #ad0000;
 
-@media screen and (max-width: 767px) {
-    
-    nav>a{
-        display:block
-    }
-    nav ul{
-        right:0px;
-        padding:0;
-        display:block;
-        visibility:hidden;
-        pointer-events:none;
-        opacity:0;
-        transition:all 0.2s
-    }
-    nav li{
-        float:none;
-        margin-top:-51px;
-        transition:all 0.2s;
-    }
-    nav a{
-        background:#fff;
-        width:100%;
-        border:0;
-        right:0;
-        padding:20px 0px
-    }
-    .nava{
-        visibility:visible;
-        margin-top:0;
-        opacity:1;
-        pointer-events:all
-    }
-    .nava li{
-        margin:0
-    }
+// Placeholder selectors
+%transition {transition: all .25s;}
+
+.navbar a,
+.sec-about p {text-align: center;}
+.navbar a {font-size: 16px;}
+.navbar .fa-external-link {font-size: 10px;}
+.main-heading {
+    color: red;
+    font-family: 'Open sans', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    text-shadow: #000000 2px 2px, #000000 -2px 2px, #000000 -2px -2px, #000000 2px -2px;
+}
+.container > h2 {
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+}
+h5{
+text-align: center;
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.sec-about a {text-decoration: underline;}
+.sec-services h2,
+.sec-services p {
+    font-weight: 300;
+    text-align: center;
+}
+.sec-testimonials p {font-style: italic;}
+.sec-contact .btn {text-transform: uppercase;}
+.soc-media-ul a {
+    text-align: center;
+    text-decoration: none;
+}
+/*=Base=*/
+section {padding: 5em 0;}
+footer {padding: 3em 0;}
+form {
+    @media screen and (max-width: 768px) and (min-width: 485px) {max-width: 70%;}
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+#expert {
+    text-align: center;
+}
+a {@extend %transition;}
+hr {
+    margin-bottom: 3em;
+    width: 7%;
+}
+/*=Module=*/
+/*=Layout=*/
+.sec-folio .row {margin-bottom: 3em;}
+.sec-testimonials .row {}
+/*Header*/
+.navbar-default {background: #fff;}
+.navbar .fa-external-link {vertical-align: top;}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {color: $red;}
+.navbar-default .navbar-nav>li>a:active {color: darken($red, 5%);}
+/*Main*/
+.sec-main {
+    position: relative;
+    height: 560px;
+    background: url("arriere.jpg") no-repeat center center;
+    background-size: cover;
+}
+.main-heading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0;
+    margin: auto;
+    height: 40px; // 87px
+    color: #fff;
 }

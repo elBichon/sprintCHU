@@ -29,7 +29,8 @@
         <main>
             <div class="helper">
                 <h1>Connexion</h1>
-<section id="choix">
+<section id="principal">
+    <section id="choix">
 
 <?php
     //echappement des champs recus
@@ -56,7 +57,6 @@
             //si le champ n existe pas
             echo 'Mauvais identifiant ou mot de passe !';
             $retour = "Cliquez <a href='index.php'>ici</a> pour revenir à la page d'accueil";
-            echo $connexion_erreur;
             echo "</br>";
             echo $retour;
         }
@@ -67,18 +67,18 @@
             $id = $_SESSION['id'];
             $_SESSION['login'] = $login;
             require 'includes/menuConnexion.php';
-            echo '<p><a href="index.php">Accueil</a>-->connexion</p>';
+            echo ' <div class="col-xs-12 col-md-12"><p><a href="index.php">Accueil</a>-->connexion</p></div>';
             echo 'Bonjour ' . $_SESSION['login'];
-            require 'includes/navigation.php';
+          
             
         }
     }
     ?>
-</section>
-                            
+    </section>
+           
             </div>
         </main>
-
+</section>
 
 
         <footer>

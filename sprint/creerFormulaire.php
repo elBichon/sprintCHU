@@ -25,6 +25,7 @@
     </head>
 
     <body>
+<section id="principal">
 <?php
     
     //si l utilisateur est deja connecte
@@ -36,18 +37,18 @@
         echo '<section id="form">';
             echo '<form action="creerQuestion.php" method="post">';
                 echo '<div id="formulaire">';
-                    echo '<label for="login">nom: </label>';
-                        echo '<input type="text" class="form-control" id="nom" placeholder="nom" name="nom" required>';
+                    echo '<div class="col-xs-4 col-md-4"><label for="login">nom: </label></div>';
+                        echo '<div class="col-xs-5 col-md-5"><input type="text" class="form-control" id="nom" placeholder="nom" name="nom" required></div>';
                 echo '</div>';
                 echo '<div class="error-message"></div></br>';
                 echo '<div id="nbQuestions">';
-                    echo '<label for="nbQuestions">Nombre De Questions: </label>';
-                    echo '<input type="text" class="form-control" placeholder="nbQuestions" id="nbQuestions" name="nbQuestions" required>';
+                    echo '<div class="col-xs-4 col-md-4"><label for="nbQuestions">Nombre De Questions: </label></div>';
+                    echo '<div class="col-xs-5 col-md-5"><input type="text" class="form-control" placeholder="nbQuestions" id="nbQuestions" name="nbQuestions" required></div>';
                 echo '</div>';
                 echo '<div class="error-message"></div></br>';
                 echo '<div id="type">';
-                    echo '<label for="text">Type: </label>';
-                        echo '<select name="type" size="1">';
+                    echo '<div class="col-xs-4 col-md-4"><label for="text">Type: </label></div>';
+                        echo '<div class="col-xs-5 col-md-5"><select name="type" size="1">';
                             echo '<option>reponse graduee 0-1</option>';
                             echo '<option>reponse graduee 0-2</option>';
                             echo '<option>reponse graduee 0-3</option>';
@@ -57,17 +58,21 @@
                             echo '<option>reponse graduee 0-7</option>';
                             echo '<option>reponse graduee 0-8</option>';
                             echo '<option>reponse graduee 0-9</option>';
-                        echo '</select>';
+                        echo '</select></div>';
                 echo '</div>';
                 echo '</br>';
-                echo '<div class="button">';
+                echo '<div class="col-xs-12 col-md-12"><div class="button">';
                     echo '<button type="submit" id="envoyerConnexion" class="btn btn-default">Creer</button>';
-                echo '</div>';
+                echo '</div></div>';
             echo '</form>';
         echo '</section>';
     }
+      else{
+        echo 'il y a eu un probleme';
+    }
     ?>
     </body>
+</section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </html>

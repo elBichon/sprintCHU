@@ -25,6 +25,7 @@
     </head>
 
     <body>
+<section id="principal">
 <?php
     
     //si l utilisateur est deja connecte
@@ -33,38 +34,39 @@
         $nom = htmlspecialchars($_POST['nom']);
         $type = htmlspecialchars($_POST['type']);
         $compteur = 0;
+
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
         echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>--><a href="creerFormulaire.php">creer</a>-->rediger</p>';
         echo '<h1>Proposer Les Questions</h1>';
         echo '</br>';
         echo '<section id="form">';
-            echo '<form action="creerQuestionFin.php" method="post">';
                 while ($compteur < $i){
-                    //ajouter une variable $qId qui est la concaténation du nom et d'un numéro, il servira de repère lors de l'insertion multiple
+                     echo '<form action="creerQuestionFin.php" method="post">';
                     echo '<div id="formulaire">';
-                    $ordre = $compteur+1;
-                    echo $ordre;
+                    $compteur = $compteur+1;
+                    echo '<div class="col-xs-4 col-md-4">';
+                    echo $compteur;
                     echo ': ';
-                        echo '<input type="text" class="form-control" placeholder="question" id="question" name="question" required>';
+                    echo '</div>';
+                        echo '<div class="col-xs-5 col-md-5"><input type="text" class="form-control" placeholder="question" id="question" name="question'.$compteur.'" required></div>';
                         echo'</br>';
                     echo '</div>';
-                    $compteur = $compteur+1;
-                    
-                }
-
+                     
+                echo '<input type="hidden" name="compteur" value= "'.$i.'">';
                 echo '<input type="hidden" name="nom" value= "'.$nom.'">';
                 echo '<input type="hidden" name="type" value="'.$type.'">';
-                echo '<input type="hidden" name="qId" value="'.$qId.'">';
-                
-                echo '<button type="submit" id="envoyerConnexion" class="btn btn-default">Creer</button>';
-            echo '</form>';
+
+        }
+         echo '<div class="col-xs-12 col-md-12"><button type="submit" id="envoyerConnexion" class="btn btn-default" name="">Creer</button></div>';
+                echo '</form>';
     echo '</section>';
     }
     else{
         echo 'il y a eu un probleme';
     }
     ?>
+</section>
     </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

@@ -24,6 +24,7 @@
     </head>
 
     <body>
+    <section id="principal">
 <?php
     //si l utilisateur est deja connecte
     if (isset($_SESSION['login'])) {
@@ -37,7 +38,11 @@
                     require 'includes/bandeauChoix.php';
             echo '</section>';
     }
+    else{
+    	echo 'il y a eu un probleme';
+    }
 ?>
+</section>
     </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

@@ -1,3 +1,5 @@
+<?php session_start();
+    ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,63 +24,74 @@
     </head>
 
     <body>
+   <?php  if (isset($_SESSION['login'])) {
+       echo '<section id="principal">';
+         echo '<header>';
+              include("includes/connect.php");
+              include("includes/menu.php"); 
+        echo '</header>';
+        echo '<main>';
+             echo '<div class="helper">';
+                 echo '<h2>Patient</h2>';
 
-        <header>
-            <?php  include("includes/connect.php"); ?>
-            <?php  include("includes/menu.php"); ?>
-        </header>
-        <main>
-            <div class="helper">
-                <h2>Patient</h2>
+                        echo '<section id="form">';
+                             echo '<form action="choixFormulaire.php" method="post">';
+                                 echo '<div id="nom">';
+                                     echo '<div class="col-xs-4 col-md-4"><label for="text">Nom: </label></div>';
+                                     echo '<div class="col-xs-5 col-md-5"><input type="nom" class="form-control" placeholder="nom" id="champNom" name="champNom" required></div>';
+                                 echo '</div>';
+                                echo '<div class="error-message"></div></br>';
+                                 echo '<div id="prenom">';
+                                    echo ' <div class="col-xs-4 col-md-4"><label for="text">Prenom: </label></div>';
+                                    echo '<div class="col-xs-5 col-md-5"><input type="prenom" class="form-control" placeholder="prenom" id="champPrenom" name="champPrenom" required></div>';
+                                echo '</div>';
+                               echo ' <div class="error-message"></div></br>';
+                              echo '  <div id="numero">';
+                                   echo ' <div class="col-xs-4 col-md-4"><label for="text">Numero: </label></div>';
+                                    echo '<div class="col-xs-5 col-md-5"><input type="text" class="form-control" placeholder="numero" id="champNumero" name="champNumero" required></div>';
+                               echo '</div>';
+                                echo '<div class="error-message"></div></br>';
+                                echo '<div id="age">';
+                                    echo '<div class="col-xs-4 col-md-4"><label for="text">Age: </label></div>';
+                                    echo '<div class="col-xs-5 col-md-5"><input type="text" class="form-control" placeholder="age" id="champAge" name="champAge" required></div>';
+                                echo '</div>';
+                                echo '<div class="error-message"></div></br>';
+                                echo '<div id="sexe">';
+                                echo '<div class="col-xs-4 col-md-4"><label for="text">Sexe: </label></div>';
+                                    echo '<div class="col-xs-5 col-md-5">';
+                                        echo '<select name="sexe" size="1">';
+                                            echo '<option>homme</option>';
+                                            echo '<option>femme</option>';
+                                       echo ' </select>';
+                                   echo ' </div>';
+                               echo ' </div></br>';
+                               echo ' <div class="col-xs-4 col-md-4"><div id="passage">';
+                               echo ' <label for="text">Passage: </label></div></div>';
+                                    echo '<div class="col-xs-5 col-md-5">';
+                                        echo '<select name="passage" size="1">';
+                                            echo '<option>premier passage</option>';
+                                            echo '<option>deuxieme passage</option>';
+                                        echo '</select>';
+                                    echo '</div>';
+                                echo '</div></br>';
+                               echo ' <div class="error-message"></div></br>';
+                                   echo '<div class="col-xs-12 col-md-12"><div class="button">';
+                                        echo '<button type="submit" id="envoyerPatient" class="btn btn-default">Ajouter</button>';
+                                    echo '</div>';
+                                echo '</div>';
+                            echo '</form>';
+                        echo '</section>';
 
-                       <section id="form">
-                            <form action="choixFormulaire.php" method="post">
-                                <div id="nom">
-                                    <label for="text">Nom: </label>
-                                    <input type="nom" class="form-control" placeholder="nom" id="champNom" name="champNom" required>
-                                </div>
-                                <div class="error-message"></div></br>
-                                <div id="prenom">
-                                    <label for="text">Prenom: </label>
-                                    <input type="prenom" class="form-control" placeholder="prenom" id="champPrenom" name="champPrenom" required>
-                                </div>
-                                <div class="error-message"></div></br>
-                                <div id="numero">
-                                    <label for="text">Numero: </label>
-                                    <input type="text" class="form-control" placeholder="numero" id="champNumero" name="champNumero" required>
-                                </div>
-                                <div class="error-message"></div></br>
-                                <div id="age">
-                                    <label for="text">Age: </label>
-                                    <input type="text" class="form-control" placeholder="age" id="champAge" name="champAge" required>
-                                </div>
-                                <div class="error-message"></div></br>
-                                <div id="sexe">
-                                <label for="text">Sexe: </label>
-                                    <select name="sexe" size="1">
-                                        <option>homme</option>
-                                        <option>femme</option>
-                                    </select>
-                                </div></br>
-                                <div id="passage">
-                                <label for="text">Passage: </label>
-                                    <select name="passage" size="1">
-                                        <option>premier passage</option>
-                                        <option>deuxieme passage</option>
-                                    </select>
-                                </div></br>
-                                <div class="error-message"></div></br>
-                                <div class="button">
-                                    <button type="submit" id="envoyerPatient" class="btn btn-default">Ajouter</button>
-                                </div>
-                            </form>
-                        </section>
-
-            </div>
-        </main>
-        <footer>
-        </footer>
-
+            echo '</div>';
+        echo '</main>';
+        echo '<footer>';
+         echo '</footer>';
+ echo '</section>';
+}
+  else{
+        echo 'il y a eu un probleme';
+    }
+?>
     </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

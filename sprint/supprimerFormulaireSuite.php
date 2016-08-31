@@ -25,6 +25,7 @@
     </head>
 
     <body>
+    <section id="principal">
 <?php
     //si l utilisateur est deja connecte
     if (isset($_SESSION['login'])) {
@@ -38,13 +39,13 @@
                 echo ' a été supprimé</h1>';
                         $requete = 'DELETE FROM question WHERE nomFormulaire = "'.$post.'"';
                         $bdd->query($requete) or die ('Erreur '.$requete.' '.$bdd->error());
-                        $bdd->close();
         echo '</section>';
     }
     else{
-        echo 'il y a eu un probleme, rendez-vous ici';
+        echo 'il y a eu un probleme';
     }
 ?>
+</section>
     </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

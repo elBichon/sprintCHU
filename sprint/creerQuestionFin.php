@@ -25,32 +25,63 @@
     </head>
 
     <body>
+<section id="principal">
 <?php
     
     //si l utilisateur est deja connecte
     if (isset($_SESSION['login'])) {
-        $nom = htmlspecialchars($_POST['nom']);
-        $type = htmlspecialchars($_POST['type']);
-        $question = htmlspecialchars($_POST['question']);
-        $qId = htmlspecialchars($_POST['qId']);
-        
+        $i = htmlspecialchars($_POST['compteur']);
+
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
         echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>--><a href="creerFormulaire.php">creer</a>--><a href="creerFormulaire.php">rediger</a>-->envoyer</p>';
         echo '<h1>Votre nouveau Formulaire a été mis à jour</h1>';
             echo '<section>';
-             while ($compteur < $qId){
+
+        $j=0;
+        while($j<$i){
+          if (isset($_POST['question'. $i .'']))
+            {
+                while($j<$i){
+                                 $j++;
+                                $nomFormulaire = htmlspecialchars($_POST['nom']);
+                                $type = htmlspecialchars($_POST['type']);
+                                $question = $_POST['question'. $j .''];
+                                echo '<div class="col-xs-12 col-md-12">';
+                                echo $j;
+                                echo ' :';
+                                echo $nomFormulaire;
+                                echo'  / ';
+                                echo $type;
+                                echo'  / ';
+                                echo $question;
+                                echo '</div>';
+                                echo '</br>';
+                                $req = $bdd->prepare('INSERT INTO question(nomFormulaire, type, question) VALUES(:nomFormulaire, :type, :question)');
+                                $req->execute(array(
+                                                         'nomFormulaire' => $nomFormulaire,
+                                                         'type' => $type,
+                                                         'question' => $question
+                                             ));
+                        }        
+                              
+            }
+            $j++;
+            echo '</br>';
+          }
+         
+            
                     //ajouter une variable $qId qui est la concaténation du nom et d'un numéro, il servira de repère lors de l'insertion multiple
-                $req = $bdd->prepare('INSERT INTO question (nomFormulaire, type, question, qId) VALUES(?,?,?,?)');
-                $req->execute(array($_POST['nom'], $_POST['type'], $_POST['question'], $_POST['qId']));
-                 $compteur = $compteur+1;
-                }
+               /* $req = $bdd->prepare('INSERT INTO question (nomFormulaire, type, question) VALUES(?,?,?)');
+                $req->execute(array($_POST['nom'], $_POST['type'], $_POST['question[]']));
+                */
             echo '</section>';
     }
     else{
         echo 'il y a eu un probleme';
     }
     ?>
+</section>
     </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

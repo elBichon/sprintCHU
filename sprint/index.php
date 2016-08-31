@@ -25,6 +25,7 @@
     </head>
 
     <body>
+ <section id="principal">
 <?php
     
     //si l utilisateur est deja connecte
@@ -35,6 +36,7 @@
     }
     //formulaire de connexion
     else {
+         if (isset($_SESSION['login'])) {
         require 'includes/connect.php';
         echo '<header>';
             require 'includes/menu.php';
@@ -46,18 +48,18 @@
                         echo '<section id="form">';
                             echo '<form action="connexion.php" method="post">';
                                 echo '<div id="loginConnexion">';
-                                    echo '<label for="login">Login: </label>';
-                                    echo '<input type="text" class="form-control" id="champLogin" placeholder="login" name="login" required>';
+                                    echo '<div class="col-xs-4 col-md-4"><label for="login">Login: </label></div>';
+                                    echo '<div class="col-xs-5 col-md-5"><input type="text" class="form-control" id="champLogin" placeholder="login" name="login" required></div>';
                                 echo '</div>';
                                 echo '<div class="error-message"></div></br>';
                                 echo '<div id="passwordConnexion">';
-                                    echo '<label for="password">Mot de passe: </label>';
-                                    echo '<input type="password" class="form-control" placeholder="password" id="champPassword" name="password" required>';
+                                    echo '<div class="col-xs-4 col-md-4"><label for="password">Mot de passe: </label></div>';
+                                    echo '<div class="col-xs-5 col-md-5"><input type="password" class="form-control" placeholder="password" id="champPassword" name="password" required></div>';
                                 echo '</div>';
                                 echo '<div class="error-message"></div></br>';
-                                echo '<div class="button">';
+                                echo '<div class="col-xs-12 col-md-12"><div class="button">';
                                     echo '<button type="submit" id="envoyerConnexion" class="btn btn-default">Se connecter</button>';
-                                echo '</div>';
+                                echo '</div></div>';
                             echo '</form>';
                         echo '</section>';
             echo '</div>';
@@ -66,7 +68,9 @@
         echo '<footer>';
         echo '</footer>';
     }
+}
 ?>
+</section>
     </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

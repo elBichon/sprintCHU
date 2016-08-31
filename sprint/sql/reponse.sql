@@ -1,4 +1,3 @@
---table contenant les reponses et les caracteristiques du patient
 drop table if exists reponse;
 
 create table reponse (

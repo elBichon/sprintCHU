@@ -2,7 +2,7 @@
 //connexion a la bdd 
     try
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=sprint;charset=utf8', 'root', 'root');
+        $bdd = new PDO('mysql:host=localhost;dbname=sprint;charset=utf8', 'root', '');
     }
     catch (Exception $e)
     {

@@ -18,6 +18,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     </head>
     <body>
+    <section id="principal">
         <header>
         </header>
         <h1>Vous êtes déconnecté</h1>
@@ -42,9 +43,10 @@
 
 
     <footer>
-            <?php  include("includes/footer.php"); ?>
+            
     </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+</section>
     </body>
 </html>
