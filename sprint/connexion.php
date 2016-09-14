@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -60,6 +62,12 @@
             echo "</br>";
             echo $retour;
         }
+   		
+   		if (isset($_SESSION['login'])) {
+        require 'includes/menuConnexion.php';
+            echo ' <div class="col-xs-12 col-md-12"><p><a href="index.php">Accueil</a>-->connexion</p></div>';
+            echo 'Bonjour ' . $_SESSION['login'];
+    		}
         else{
             //si le compte existe creation de la session
             session_start();
@@ -68,9 +76,7 @@
             $_SESSION['login'] = $login;
             require 'includes/menuConnexion.php';
             echo ' <div class="col-xs-12 col-md-12"><p><a href="index.php">Accueil</a>-->connexion</p></div>';
-            echo 'Bonjour ' . $_SESSION['login'];
-          
-            
+            echo 'Bonjour ' . $_SESSION['login'];   
         }
     }
     ?>
@@ -88,14 +94,3 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </html>
-
-
-
-
-
-
-
-
-
-
-

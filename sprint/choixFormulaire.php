@@ -91,6 +91,7 @@
     
     else{//rajouter une boucle pour faire la sélection sur les qId et envoyer plusieurs choses via formulaire
         if (isset($_SESSION['login'])) {
+        echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>--><a href="patient.php">patient</a>-->choix</p>';
         echo '<form method="post" action="questions.php">';
         $reponse = $bdd->query("SELECT DISTINCT nomFormulaire FROM question ORDER BY id");
         echo '<div id="choixForm">';

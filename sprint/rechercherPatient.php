@@ -34,21 +34,9 @@
                 echo '<h1>Rechercher un patient</h1>';
                     echo '<section id="recherche">';
                         echo '<form method="post" action="rechercherPatientSuite.php">';
-                            echo 'nom: ';
-                            echo '<select name="nom" id="nom">';
-                                $reponse = $bdd->query('SELECT nom FROM reponse');
-                                    while ($donnees = $reponse->fetch()){?>
-                                        <option value = "<?php echo $donnees['nom']; ?>"> <?php echo $donnees['nom']; ?></option>
-                                <?php }
-                            echo '</select>';
-                                    echo '</br>';
-                            echo 'prenom: ';
-                            echo '<select name="prenom" id="prenom">';
-                                $reponse = $bdd->query('SELECT prenom FROM reponse');
-                                    while ($donnees = $reponse->fetch()){?>
-                                        <option value = "<?php echo $donnees['prenom']; ?>"> <?php echo $donnees['prenom']; ?></option>
-                                <?php }
-                            echo '</select>';
+                             echo '<div class="col-xs-5 col-md-5"><label for="login">numero: </label></div>';
+                                 echo '<div class="col-xs-7 col-md-7"><input type="text" class="form-control" id="numero" placeholder="numero" name="numero" required></div>';
+                            echo '</br>';
                             echo '<div class="bouton"><input type="submit" class="text" value="rechercher"/></div>';
                         echo '</form>';
                     echo '</section>';

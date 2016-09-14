@@ -6,6 +6,9 @@ body{
     font-family: 'Hind', sans-serif;
     margin:0;
 }
+img{
+    width: 200px;
+}
 
 $red: #ad0000;
 

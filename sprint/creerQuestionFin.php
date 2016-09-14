@@ -44,8 +44,8 @@
             {
                 while($j<$i){
                                  $j++;
-                                $nomFormulaire = htmlspecialchars($_POST['nom']);
-                                $type = htmlspecialchars($_POST['type']);
+                                $nomFormulaire = strtolower(strtolower(htmlspecialchars($_POST['nom']));
+                                $type = strtolower(htmlspecialchars($_POST['type']));
                                 $question = $_POST['question'. $j .''];
                                 echo '<div class="col-xs-12 col-md-12">';
                                 echo $j;

@@ -10,6 +10,5 @@ numero varchar(50) not null,
 age integer not null,
 sexe varchar(50) not null,
 passage varchar(50) not null,
-idQuestion integer not null,
 reponse varchar(50) not null
 ) engine=innodb character set utf8 collate utf8_unicode_ci;

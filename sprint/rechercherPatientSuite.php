@@ -30,14 +30,12 @@
     if (isset($_SESSION['login'])) {
         require 'includes/menuConnexion.php';
         require 'includes/connect.php';
-                $nom = $_POST['nom'];
-                $prenom = $_POST['prenom'];
+                $numero = $_POST['numero'];
                 echo '<p><a href="index.php">Accueil</a>--><a href="patient.php">patient</a>--><a href="rechercherPatient.php">rechercher</a>-->voir</p>';
                 echo '<h1>Votre Patient</h1>';
                     echo '<section id="voir">';
-                        $request = $bdd->query('SELECT DISTINCT * FROM reponse WHERE nom = "'.$nom.'" AND prenom = "'.$prenom.'" GROUP BY passage ORDER BY id DESC');
-                        while ($donnees = $request->fetch(PDO::FETCH_ASSOC))
-                        { 
+                        $request = $bdd->query('SELECT DISTINCT * FROM reponse WHERE numero = "'.$numero.'"  GROUP BY passage ORDER BY id DESC');
+                        while ($donnees = $request->fetch(PDO::FETCH_ASSOC)){ 
                             echo $donnees['nom'];
                             echo '--';
                             echo $donnees['prenom'];

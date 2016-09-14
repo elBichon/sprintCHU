@@ -32,8 +32,8 @@
     if (isset($_SESSION['login'])) {
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
-        echo '<p><a href="index.php">patient</a>--><a href="connexion.php">formulaires</a>--><a href="creerFormulaire.php">repondre</a>-->envoyer</p>';
-        echo '<h1>Votre Formulaire a été envoyé</h1>';
+        echo '<p><a href="index.php">patient</a>--><a href="connexion.php">formulaires</a>--><a href="creerFormulaire.php">repondre</a>--><a href="envoiReponseQUestions.php">envoyer</a>-->Confirmation</p>';
+        echo '<h1>Vos réponses ont été enregistrées</h1>';
             echo '<section>';
 
             $questionnaire1=strtolower(htmlspecialchars($_POST['q1']));

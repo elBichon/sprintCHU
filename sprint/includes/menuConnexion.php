@@ -14,6 +14,7 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right js-nav">
+                            <li><img ID="LOGO" src="img/logo.png"> </li>
         					<li><a href="patient.php">PATIENT</a></li>
         					<li><a href="voirFormulaire.php">EXAMINER</a></li>
         					<li><a href="creerFormulaire.php">CREER</a></li>
