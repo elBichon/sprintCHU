@@ -32,8 +32,8 @@
     if (isset($_SESSION['login'])) {
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
-        echo '<p><a href="index.php">patient</a>--><a href="connexion.php">formulaires</a>--><a href="creerFormulaire.php">repondre</a>-->envoyer</p>';
-        echo '<h1>Votre Formulaire a été envoyé</h1>';
+        echo '<p><a href="patient.php">patient</a>--><a href="choixFormulaire.php">formulaires</a>--><a href="questions.php">repondre</a>-->envoyer</p>';
+        echo '<h1>Confirmer les réponses</h1>';
             echo '<section>';
 
             $questionnaire1=strtolower(htmlspecialchars($_POST['q1']));
@@ -53,8 +53,13 @@
             $nb4= htmlspecialchars($_POST['nb4']);
             $nb5= htmlspecialchars($_POST['nb5']);
             $nb5= htmlspecialchars($_POST['nb5']);
-            $date = date("m.d.y");  
-            
+            $reponseArticles1 = $bdd->query('SELECT * FROM question WHERE nomFormulaire="'.$questionnaire1.'"');
+            $reponseArticles2 = $bdd->query('SELECT * FROM question WHERE nomFormulaire="'.$questionnaire2.'"');
+            $reponseArticles3 = $bdd->query('SELECT * FROM question WHERE nomFormulaire="'.$questionnaire3.'"');
+            $reponseArticles4 = $bdd->query('SELECT * FROM question WHERE nomFormulaire="'.$questionnaire4.'"');
+            $reponseArticles5 = $bdd->query('SELECT * FROM question WHERE nomFormulaire="'.$questionnaire5.'"');
+            $date = date("m.d.y");
+           
             $j=0;
             while($j<$nb1){
                 if (isset($_POST['reponse1'. $nb1 .''])){
@@ -78,94 +83,95 @@
                     $j++;
             }
             $j=0;
-            while($j<$nb2){
-                if (isset($_POST['reponse2'. $nb2 .''])){
-                    while($j<$nb2){
+            while($j<$nb1){
+                if (isset($_POST['reponse1'. $nb1 .''])){
+                    while($j<$nb1){
                                 $j++;
-                                $question2 = $_POST['reponse2'. $j .''];
+                                $question1 = $_POST['reponse1'. $j .''];
                                 $req = $bdd->prepare('INSERT INTO reponse(date,nom,nomFormulaire,prenom,numero,age,sexe,passage,reponse) VALUES(:date,:nom,:nomFormulaire,:prenom,:numero,:age,:sexe,:passage,:reponse)');
                                 $req->execute(array(
                                                         'date' => $date,
                                                         'nom' => $nom,
-                                                        'nomFormulaire' => $questionnaire2,
+                                                        'nomFormulaire' => $questionnaire1,
                                                         'prenom' => $prenom,
                                                         'numero' => $numero,
                                                         'age' => $age,
                                                         'sexe' => $sexe,
                                                         'passage' => $passage,
-                                                        'reponse' => $question2
+                                                        'reponse' => $question1
                                              ));
                                 }                          
                     }
                     $j++;
             }
             $j=0;
-            while($j<$nb3){
-                if (isset($_POST['reponse3'. $nb3 .''])){
-                    while($j<$nb3){
+            while($j<$nb1){
+                if (isset($_POST['reponse1'. $nb1 .''])){
+                    while($j<$nb1){
                                 $j++;
-                                $question3 = $_POST['reponse3'. $j .''];
+                                $question1 = $_POST['reponse1'. $j .''];
                                 $req = $bdd->prepare('INSERT INTO reponse(date,nom,nomFormulaire,prenom,numero,age,sexe,passage,reponse) VALUES(:date,:nom,:nomFormulaire,:prenom,:numero,:age,:sexe,:passage,:reponse)');
                                 $req->execute(array(
                                                         'date' => $date,
                                                         'nom' => $nom,
-                                                        'nomFormulaire' => $questionnaire3,
+                                                        'nomFormulaire' => $questionnaire1,
                                                         'prenom' => $prenom,
                                                         'numero' => $numero,
                                                         'age' => $age,
                                                         'sexe' => $sexe,
                                                         'passage' => $passage,
-                                                        'reponse' => $question3
+                                                        'reponse' => $question1
                                              ));
                                 }                          
                     }
                     $j++;
             }
             $j=0;
-            while($j<$nb4){
-                if (isset($_POST['reponse4'. $nb4 .''])){
-                    while($j<$nb4){
+            while($j<$nb1){
+                if (isset($_POST['reponse1'. $nb1 .''])){
+                    while($j<$nb1){
                                 $j++;
-                                $question4 = $_POST['reponse4'. $j .''];
+                                $question1 = $_POST['reponse1'. $j .''];
                                 $req = $bdd->prepare('INSERT INTO reponse(date,nom,nomFormulaire,prenom,numero,age,sexe,passage,reponse) VALUES(:date,:nom,:nomFormulaire,:prenom,:numero,:age,:sexe,:passage,:reponse)');
                                 $req->execute(array(
                                                         'date' => $date,
                                                         'nom' => $nom,
-                                                        'nomFormulaire' => $questionnaire4,
+                                                        'nomFormulaire' => $questionnaire1,
                                                         'prenom' => $prenom,
                                                         'numero' => $numero,
                                                         'age' => $age,
                                                         'sexe' => $sexe,
                                                         'passage' => $passage,
-                                                        'reponse' => $question4
+                                                        'reponse' => $question1
                                              ));
                                 }                          
                     }
                     $j++;
             }
             $j=0;
-            while($j<$nb5){
-                if (isset($_POST['reponse5'. $nb5 .''])){
-                    while($j<$nb5){
+            while($j<$nb1){
+                if (isset($_POST['reponse1'. $nb1 .''])){
+                    while($j<$nb1){
                                 $j++;
-                                $question5 = $_POST['reponse5'. $j .''];
+                                $question1 = $_POST['reponse1'. $j .''];
                                 $req = $bdd->prepare('INSERT INTO reponse(date,nom,nomFormulaire,prenom,numero,age,sexe,passage,reponse) VALUES(:date,:nom,:nomFormulaire,:prenom,:numero,:age,:sexe,:passage,:reponse)');
                                 $req->execute(array(
                                                         'date' => $date,
                                                         'nom' => $nom,
-                                                        'nomFormulaire' => $questionnaire5,
+                                                        'nomFormulaire' => $questionnaire1,
                                                         'prenom' => $prenom,
                                                         'numero' => $numero,
                                                         'age' => $age,
                                                         'sexe' => $sexe,
                                                         'passage' => $passage,
-                                                        'reponse' => $question5
+                                                        'reponse' => $question1
                                              ));
                                 }                          
                     }
                     $j++;
             }
-    }     
+          
+     }
     else{
         echo 'il y a eu un probleme';
     }

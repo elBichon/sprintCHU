@@ -32,7 +32,6 @@
         echo '</header>';
         echo '<main>';
              echo '<div class="helper">';
-              echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>-->patient</p>';
                  echo '<h2>Patient</h2>';
 
                         echo '<section id="form">';

@@ -32,10 +32,9 @@
     if (isset($_SESSION['login'])) {
         require 'includes/connect.php';
         require 'includes/menuConnexion.php';
-        echo '<p><a href="index.php">patient</a>--><a href="connexion.php">formulaires</a>--><a href="creerFormulaire.php">repondre</a>--><a href="envoiReponseQUestions.php">envoyer</a>-->Confirmation</p>';
+        echo '<p><a href="patient.php">patient</a>--><a href="choixFormulaire.php">formulaires</a>--><a href="questions.php">repondre</a>--><a href="envoiReponseQuestions.php">envoyer</a>-->Confirmation</p>';
         echo '<h1>Vos réponses ont été enregistrées</h1>';
             echo '<section>';
-
             $questionnaire1=strtolower(htmlspecialchars($_POST['q1']));
             $questionnaire2=strtolower(htmlspecialchars($_POST['q2']));
             $questionnaire3=strtolower(htmlspecialchars($_POST['q3']));
@@ -53,12 +52,38 @@
             $nb4= htmlspecialchars($_POST['nb4']);
             $nb5= htmlspecialchars($_POST['nb5']);
             $nb5= htmlspecialchars($_POST['nb5']);
-            $date = date("m.d.y");  
-            
+            $date = date("m.d.y");
+            $i = $_POST['reponse1'. $nb1 .''];
+            echo $i;
+
+      
+
+			
+			/*$j=0;
+                	$compteur=0;
+            		while($j<$nb1){
+                		if (isset($_POST['reponse1'. $nb1 .''])){
+                    		while($j<$nb1){
+                            	    $j++;
+                            	    $compteur++;
+                                	$question1 = $_POST['reponse1'. $compteur .''];
+                                	echo $question1;
+                                	}
+                        	}
+                    	}
+
+
+
+
+
+
+
+
             $j=0;
             while($j<$nb1){
                 if (isset($_POST['reponse1'. $nb1 .''])){
                     while($j<$nb1){
+                    	echo "TOTO";
                                 $j++;
                                 $question1 = $_POST['reponse1'. $j .''];
                                 $req = $bdd->prepare('INSERT INTO reponse(date,nom,nomFormulaire,prenom,numero,age,sexe,passage,reponse) VALUES(:date,:nom,:nomFormulaire,:prenom,:numero,:age,:sexe,:passage,:reponse)');
@@ -76,96 +101,8 @@
                                 }                          
                     }
                     $j++;
-            }
-            $j=0;
-            while($j<$nb2){
-                if (isset($_POST['reponse2'. $nb2 .''])){
-                    while($j<$nb2){
-                                $j++;
-                                $question2 = $_POST['reponse2'. $j .''];
-                                $req = $bdd->prepare('INSERT INTO reponse(date,nom,nomFormulaire,prenom,numero,age,sexe,passage,reponse) VALUES(:date,:nom,:nomFormulaire,:prenom,:numero,:age,:sexe,:passage,:reponse)');
-                                $req->execute(array(
-                                                        'date' => $date,
-                                                        'nom' => $nom,
-                                                        'nomFormulaire' => $questionnaire2,
-                                                        'prenom' => $prenom,
-                                                        'numero' => $numero,
-                                                        'age' => $age,
-                                                        'sexe' => $sexe,
-                                                        'passage' => $passage,
-                                                        'reponse' => $question2
-                                             ));
-                                }                          
-                    }
-                    $j++;
-            }
-            $j=0;
-            while($j<$nb3){
-                if (isset($_POST['reponse3'. $nb3 .''])){
-                    while($j<$nb3){
-                                $j++;
-                                $question3 = $_POST['reponse3'. $j .''];
-                                $req = $bdd->prepare('INSERT INTO reponse(date,nom,nomFormulaire,prenom,numero,age,sexe,passage,reponse) VALUES(:date,:nom,:nomFormulaire,:prenom,:numero,:age,:sexe,:passage,:reponse)');
-                                $req->execute(array(
-                                                        'date' => $date,
-                                                        'nom' => $nom,
-                                                        'nomFormulaire' => $questionnaire3,
-                                                        'prenom' => $prenom,
-                                                        'numero' => $numero,
-                                                        'age' => $age,
-                                                        'sexe' => $sexe,
-                                                        'passage' => $passage,
-                                                        'reponse' => $question3
-                                             ));
-                                }                          
-                    }
-                    $j++;
-            }
-            $j=0;
-            while($j<$nb4){
-                if (isset($_POST['reponse4'. $nb4 .''])){
-                    while($j<$nb4){
-                                $j++;
-                                $question4 = $_POST['reponse4'. $j .''];
-                                $req = $bdd->prepare('INSERT INTO reponse(date,nom,nomFormulaire,prenom,numero,age,sexe,passage,reponse) VALUES(:date,:nom,:nomFormulaire,:prenom,:numero,:age,:sexe,:passage,:reponse)');
-                                $req->execute(array(
-                                                        'date' => $date,
-                                                        'nom' => $nom,
-                                                        'nomFormulaire' => $questionnaire4,
-                                                        'prenom' => $prenom,
-                                                        'numero' => $numero,
-                                                        'age' => $age,
-                                                        'sexe' => $sexe,
-                                                        'passage' => $passage,
-                                                        'reponse' => $question4
-                                             ));
-                                }                          
-                    }
-                    $j++;
-            }
-            $j=0;
-            while($j<$nb5){
-                if (isset($_POST['reponse5'. $nb5 .''])){
-                    while($j<$nb5){
-                                $j++;
-                                $question5 = $_POST['reponse5'. $j .''];
-                                $req = $bdd->prepare('INSERT INTO reponse(date,nom,nomFormulaire,prenom,numero,age,sexe,passage,reponse) VALUES(:date,:nom,:nomFormulaire,:prenom,:numero,:age,:sexe,:passage,:reponse)');
-                                $req->execute(array(
-                                                        'date' => $date,
-                                                        'nom' => $nom,
-                                                        'nomFormulaire' => $questionnaire5,
-                                                        'prenom' => $prenom,
-                                                        'numero' => $numero,
-                                                        'age' => $age,
-                                                        'sexe' => $sexe,
-                                                        'passage' => $passage,
-                                                        'reponse' => $question5
-                                             ));
-                                }                          
-                    }
-                    $j++;
-            }
-    }     
+            	}*/
+           }
     else{
         echo 'il y a eu un probleme';
     }

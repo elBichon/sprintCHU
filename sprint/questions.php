@@ -41,7 +41,7 @@
             if (isset($_SESSION['login'])) {
                   require 'includes/connect.php';
                   require 'includes/menuConnexion.php';
-                   echo '<p><a href="index.php">Accueil</a>--><a href="connexion.php">connexion</a>--><a href="patient.php">patient</a>--><a href="choixFormulaire.php">choix</a>-->repondre</p>';
+                   echo '<p><a href="patient.php">patient</a>--><a href="choixFormulaire.php">choix</a>-->repondre</p>';
                     echo '<h1>REPONDRE</h1>';
                         echo '<form action="envoiReponseQuestions.php" method="post"';
                             $reponseArticles1 = $bdd->query('SELECT * FROM question WHERE nomFormulaire="'.$questionnaire1.'"');
@@ -82,31 +82,31 @@
                                 echo '<p><strong>' . $type . '</strong></br></p>';
                                 switch ($type) {
                                     case "reponse graduee 0-1":
-                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="1" step="1">';
+                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="1" step="1" required>';
                                     break;
                                     case "reponse graduee 0-2":
-                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="2" step="1">';
+                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="2" step="1"required>';
                                     break;
                                     case "reponse graduee 0-3":
-                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="3" step="1">';
+                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="3" step="1" required>';
                                     break;
                                     case "reponse graduee 0-4":
-                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="4" step="1">';
+                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="4" step="1" required>';
                                     break;
                                     case "reponse graduee 0-5":
-                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="5" step="1">';
+                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="5" step="1" required>';
                                     break;
                                     case "reponse graduee 0-6":
-                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="6" step="1">';
+                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="6" step="1" required>';
                                     break;
                                     case "reponse graduee 0-7":
-                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="7" step="1">';
+                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="7" step="1" required>';
                                     break;
                                     case "reponse graduee 0-8":
-                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="8" step="1">';
+                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="8" step="1" required>';
                                     break;
                                     case "reponse graduee 0-9":
-                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="9" step="1">';
+                                        echo '<input type="number" name="reponse1'.$compteur.'" min="0" max="9" step="1"  required';
                                     break;
                                     }
                                     $compteur=$compteur+1;
@@ -126,31 +126,31 @@
                                 echo '<p><strong>' . $type . '</strong></br></p>';
                                 switch ($type) {
                                     case "reponse graduee 0-1":
-                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="1" step="1">';
+                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="1" step="1" required>';
                                     break;
                                     case "reponse graduee 0-2":
-                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="2" step="1">';
+                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="2" step="1" required>';
                                     break;
                                     case "reponse graduee 0-3":
-                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="3" step="1">';
+                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="3" step="1" required>';
                                     break;
                                     case "reponse graduee 0-4":
-                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="4" step="1">';
+                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="4" step="1" required>';
                                     break;
                                     case "reponse graduee 0-5":
-                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="5" step="1">';
+                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="5" step="1" required>';
                                     break;
                                     case "reponse graduee 0-6":
-                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="6" step="1">';
+                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="6" step="1" required>';
                                     break;
                                     case "reponse graduee 0-7":
-                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="7" step="1">';
+                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="7" step="1" required>';
                                     break;
                                     case "reponse graduee 0-8":
-                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="8" step="1">';
+                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="8" step="1" required>';
                                     break;
                                     case "reponse graduee 0-9":
-                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="9" step="1">';
+                                        echo '<input type="number" name="reponse2'.$compteur.'" min="0" max="9" step="1" required>';
                                     break;
                                     }
                                     $compteur=$compteur+1;
@@ -170,31 +170,31 @@
                                 echo '<p><strong>' . $type . '</strong></br></p>';
                                 switch ($type) {
                                     case "reponse graduee 0-1":
-                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="1" step="1">';
+                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="1" step="1" required>';
                                     break;
                                     case "reponse graduee 0-2":
-                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="2" step="1">';
+                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="2" step="1" required>';
                                     break;
                                     case "reponse graduee 0-3":
-                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="3" step="1">';
+                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="3" step="1" required>';
                                     break;
                                     case "reponse graduee 0-4":
-                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="4" step="1">';
+                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="4" step="1" required>';
                                     break;
                                     case "reponse graduee 0-5":
-                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="5" step="1">';
+                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="5" step="1" required>';
                                     break;
                                     case "reponse graduee 0-6":
-                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="6" step="1">';
+                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="6" step="1" required>';
                                     break;
                                     case "reponse graduee 0-7":
-                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="7" step="1">';
+                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="7" step="1" required>';
                                     break;
                                     case "reponse graduee 0-8":
-                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="8" step="1">';
+                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="8" step="1" required>';
                                     break;
                                     case "reponse graduee 0-9":
-                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="9" step="1">';
+                                        echo '<input type="number" name="reponse3'.$compteur.'" min="0" max="9" step="1" required>';
                                     break;
                                     }
                                     $compteur=$compteur+1;
@@ -214,31 +214,31 @@
                                 echo '<p><strong>' . $type . '</strong></br></p>';
                                 switch ($type) {
                                     case "reponse graduee 0-1":
-                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="1" step="1">';
+                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="1" step="1" required>';
                                     break;
                                     case "reponse graduee 0-2":
-                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="2" step="1">';
+                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="2" step="1" required>';
                                     break;
                                     case "reponse graduee 0-3":
-                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="3" step="1">';
+                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="3" step="1" required>';
                                     break;
                                     case "reponse graduee 0-4":
-                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="4" step="1">';
+                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="4" step="1" required>';
                                     break;
                                     case "reponse graduee 0-5":
-                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="5" step="1">';
+                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="5" step="1" required>';
                                     break;
                                     case "reponse graduee 0-6":
-                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="6" step="1">';
+                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="6" step="1" required>';
                                     break;
                                     case "reponse graduee 0-7":
-                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="7" step="1">';
+                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="7" step="1" required>';
                                     break;
                                     case "reponse graduee 0-8":
-                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="8" step="1">';
+                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="8" step="1" required>';
                                     break;
                                     case "reponse graduee 0-9":
-                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="9" step="1">';
+                                        echo '<input type="number" name="reponse4'.$compteur.'" min="0" max="9" step="1" required>';
                                     break;
                                     }
                                     $compteur=$compteur+1;
@@ -258,31 +258,31 @@
                                 echo '<p><strong>' . $type . '</strong></br></p>';
                                 switch ($type) {
                                     case "reponse graduee 0-1":
-                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="1" step="1">';
+                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="1" step="1" required>';
                                     break;
                                     case "reponse graduee 0-2":
-                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="2" step="1">';
+                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="2" step="1" required>';
                                     break;
                                     case "reponse graduee 0-3":
-                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="3" step="1">';
+                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="3" step="1" required>';
                                     break;
                                     case "reponse graduee 0-4":
-                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="4" step="1">';
+                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="4" step="1" required>';
                                     break;
                                     case "reponse graduee 0-5":
-                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="5" step="1">';
+                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="5" step="1" required>';
                                     break;
                                     case "reponse graduee 0-6":
-                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="6" step="1">';
+                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="6" step="1" required>';
                                     break;
                                     case "reponse graduee 0-7":
-                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="7" step="1">';
+                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="7" step="1" required>';
                                     break;
                                     case "reponse graduee 0-8":
-                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="8" step="1">';
+                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="8" step="1" required>';
                                     break;
                                     case "reponse graduee 0-9":
-                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="9" step="1">';
+                                        echo '<input type="number" name="reponse5'.$compteur.'" min="0" max="9" step="1" required>';
                                     break;
                                     }
                                     $compteur=$compteur+1;
@@ -308,8 +308,9 @@
                                 echo '<input type="hidden" name="sexe" value= "'.$sexe.'">';
                                 echo '<input type="hidden" name="passage" value= "'.$passage.'">';
                                 echo '<input type="hidden" name="age" value= "'.$age.'">';
-                                echo '<div class="col-xs-12 col-md-12"><div class="bouton"><input type="submit" class="text" value="repondre"/></div></div>';
+                                echo '<div id="envoi" class="col-xs-12 col-md-12"><div class="bouton"><input type="submit" class="text" value="repondre"/></div></div>';
                         echo '</form>';
+                        echo '<div id="confirm" class="col-xs-12 col-md-12"><div class="bouton"><input type="submit" class="text" value="confirmer"/></div></div>';
                     }
                     else{
                         echo 'il y a eu un probleme';
@@ -319,4 +320,12 @@
     </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script>
+
+$("#envoi").hide();
+$("#confirm").click(function(){
+	alert('vous allez pouvoir envoyer vos réponses, atention, vous ne pourrez pas revenir en arrière');
+    $("#envoi").show();
+});
+</script>
 </html>
